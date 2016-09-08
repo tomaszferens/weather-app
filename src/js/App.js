@@ -6,13 +6,13 @@ require ('../style/file.scss');
 import Wrap from './Wrap';
 
 export default class App extends Component {
-	constructor() {
-		super();
-		this.state = {
-			location: '',
-			data: {}
-		};
-	}
+  constructor() {
+    super();
+    this.state = {
+      location: '',
+      data: {}
+    };
+  }
 
   fetchData(evt) {
     evt.preventDefault();
@@ -25,15 +25,15 @@ export default class App extends Component {
 
     let self = this;
 
-    xhr({
-		  url: url
-		}, function (err, data) {
-		  self.setState({
-		    data: JSON.parse(data.body)
-		  });
-		});
 
-	}
+    xhr({
+      url: url
+    }, function (err, data) {
+      self.setState({
+        data: JSON.parse(data.body)
+      });
+    });
+}
 
   changeLocation(evt) {
     this.setState({
@@ -50,7 +50,7 @@ export default class App extends Component {
       <div>
         <h1>Weather</h1>
         <form onSubmit={this.fetchData.bind(this)}>
-					<label>Show me the temperature for
+	  <label>Show me the temperature for
             <input
               placeholder={"City"}
               type="text"
