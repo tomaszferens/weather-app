@@ -28,7 +28,7 @@ export default class App extends Component {
 
     xhr({
       url: url
-    }, function (err, data) {
+    }, (err, data) => {
       self.setState({
         data: JSON.parse(data.body)
       });
